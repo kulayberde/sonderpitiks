@@ -43,10 +43,10 @@
     <header class="d-flex justify-content-center align-items-center text-center position-relative" 
         style="background: url('img/Pusa.JPG') no-repeat center center/cover; color: white; height: 80vh;">
     
-    <!-- Overlay for better text visibility -->
+    
     <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.5);"></div>
 
-    <!-- Content Wrapper to Ensure Proper Layering -->
+ 
     <div class="position-relative z-1 p-4">
         <h1> Every photo holds a story. Every frame captures a feeling.</h1>
         <h2> Own a piece of a moment—get it now.</h2>
@@ -179,14 +179,13 @@
   </div>
   
   <script>
-    // Select all "Add to Cart" buttons
+    
     const addToCartButtons = document.querySelectorAll(".add-to-cart");
     const cartItemsContainer = document.getElementById("cart-items");
     const cartTotal = document.getElementById("cart-total");
 
-    let cart = {}; // Object to store cart items
+    let cart = {}; 
 
-    // Custom cart images (Change these to whatever images you want)
     const cartImages = {
         "Burloloy": "cart-img/burloloy.jpg",
         "Quiapo": "cart-img/quiapo.jpg",
@@ -196,9 +195,9 @@
         "Tanggal Puting Buhok": "cart-img/tanggalputingbuhok.jpg"
     };
 
-    // Function to update the cart display
+ 
     function updateCartDisplay() {
-        cartItemsContainer.innerHTML = ""; // Clear previous cart items
+        cartItemsContainer.innerHTML = ""; 
         let total = 0;
 
         for (let itemName in cart) {
@@ -218,10 +217,10 @@
         }
 
         cartTotal.textContent = total;
-        attachRemoveEvent(); // Reattach remove event to buttons
+        attachRemoveEvent(); 
     }
 
-    // Function to handle adding items to the cart
+   
     addToCartButtons.forEach(button => {
         button.addEventListener("click", () => {
             let name = button.getAttribute("data-name");
@@ -237,12 +236,12 @@
         });
     });
 
-    // Function to remove item from cart
+   
     function attachRemoveEvent() {
         document.querySelectorAll(".remove-item").forEach(button => {
             button.addEventListener("click", () => {
                 let itemName = button.getAttribute("data-name");
-                delete cart[itemName]; // Remove item from cart object
+                delete cart[itemName]; 
                 updateCartDisplay();
             });
         });
